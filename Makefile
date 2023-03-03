@@ -6,7 +6,7 @@
 #    By: rchiewli <rchiewli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/14 10:14:28 by pmikada           #+#    #+#              #
-#    Updated: 2023/02/18 15:49:05 by rchiewli         ###   ########.fr        #
+#    Updated: 2023/03/03 22:59:07 by rchiewli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRCS	= newnewsh/shdec.c \
 			newnewsh/expander.c \
 			newnewsh/expander_utils.c \
 			newnewsh/expander_utils2.c \
+			newnewsh/expander_util3.c \
 			newnewsh/expanderutil.c \
 			newnewsh/free.c \
 			sigasig/sighand.c \

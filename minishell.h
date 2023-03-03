@@ -6,7 +6,7 @@
 /*   By: rchiewli <rchiewli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 10:11:47 by pmikada           #+#    #+#             */
-/*   Updated: 2023/02/17 03:18:20 by rchiewli         ###   ########.fr       */
+/*   Updated: 2023/03/03 21:49:23 by rchiewli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,9 @@ char	*ft_putpath(char **cmd, char **envar, char **fullvar, int i);
 // expander_utils
 char	*ft_envargetter(char **cmd, int i);
 int		ft_expander(t_shell *shell, char **env, int *exit_s);
+char	*ft_quotecut(char *cstr);
+void	ft_tant(t_shell *shell);
+char	*ft_ecprcut(char *cstr);
 // expander_utils2
 int		ft_exptostr(t_shell *shell);
 // expanderutil

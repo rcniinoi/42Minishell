@@ -6,7 +6,7 @@
 /*   By: rchiewli <rchiewli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 03:50:56 by pmikada           #+#    #+#             */
-/*   Updated: 2023/02/25 03:18:12 by rchiewli         ###   ########.fr       */
+/*   Updated: 2023/03/03 23:00:20 by rchiewli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ static void	ft_submain2(t_shell *shell, t_data *data, int *exit_s)
 	ft_parser(shell);
 	ft_expander(shell, data->env, exit_s);
 	ft_exptostr(shell);
+	ft_tant(shell);
 	ft_executor(shell->tcmd, data, exit_s);
 	ft_free_sub(shell);
 }
@@ -101,7 +102,8 @@ int	ft_submain(t_shell *shell, char **env)
 			free(shell->lex->allstr);
 			exit (0);
 		}
-		if (ft_strlen(shell->lex->allstr) > 0)
+		if (ft_strlen(shell->lex->allstr) > 0 \
+		&& ft_strlen(ft_strtrim(shell->lex->allstr, " ")) > 0)
 			ft_submain2(shell, &data, &exit_s);
 		free(shell->lex->lexed);
 		free(shell->lex->allstr);
