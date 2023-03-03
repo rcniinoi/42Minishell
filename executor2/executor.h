@@ -6,7 +6,7 @@
 /*   By: rchiewli <rchiewli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 19:30:13 by pmikada           #+#    #+#             */
-/*   Updated: 2023/02/18 15:25:26 by rchiewli         ###   ########.fr       */
+/*   Updated: 2023/03/03 23:27:39 by rchiewli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,13 +97,11 @@ void	ft_strlcatt(char *dst, char *src, int size);
 // utils4
 int		ft_strcmpp(char *s1, char *s2, int size);
 int		ft_strlen_2(char *s);
+void	ft_update_status(t_pipe *p, t_data *data);
 // free
 void	ft_free_c2d(char **s);
 void	ft_free_i2d(int	**s, int size);
 void	ft_free_data(t_data *data, char *s);
 void	ft_free_pipe(t_pipe *pipe);
-
-int	ft_atoi(const char *str);
-int	ft_isdigit(int c);
 
 #endif

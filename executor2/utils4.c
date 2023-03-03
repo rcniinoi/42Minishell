@@ -37,3 +37,14 @@ int	ft_strlen_2(char *s)
 		i++;
 	return (i);
 }
+
+void	ft_update_status(t_pipe *p, t_data *data)
+{
+	if (p->cmd[0] != NULL && p->path == NULL \
+		&& ft_chk_builtins(p->cmd[0]))
+		*(data->ex_s) = 127;
+	else if (p->cmd[0] != NULL && (p->path != NULL \
+		|| ft_chk_builtins(p->cmd[0]) == 0) \
+		&& ft_strncmpp(p->cmd[0], "$?", 2))
+		*(data->ex_s) = 0;
+}

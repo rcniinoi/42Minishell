@@ -18,7 +18,7 @@ static char	*ft_chk_path(t_pipe *pipe, t_data *data)
 	char	*chk;
 
 	i = -1;
-	while (data->path != NULL && data->path[++i] 
+	while (data->path != NULL && data->path[++i] \
 		&& pipe->cmd[0] != NULL)
 	{
 		chk = ft_strjoinn("", pipe->cmd[0]);
@@ -99,6 +99,7 @@ static void	ft_set_pipe(t_pipe *p, t_data *data, t_cmd *cmd, int loop)
 void	ft_fork(t_cmd *cmd, t_data *data, int loop)
 {
 	t_pipe	p;
+
 	p.cmd = cmd->cmd;
 	p.path = ft_chk_path(&p, data);
 	data->child_pid[loop] = fork();
@@ -118,11 +119,7 @@ void	ft_fork(t_cmd *cmd, t_data *data, int loop)
 	{
 		ft_chk_parent(&p, data, cmd);
 		ft_close_parent(data, loop);
-		if (p.cmd[0] != NULL && p.path == NULL && ft_chk_builtins(p.cmd[0]))
-			*(data->ex_s) = 127;
-		else if (p.cmd[0] != NULL &&(p.path != NULL || ft_chk_builtins(p.cmd[0]) == 0) \
-			&& ft_strncmpp(p.cmd[0], "$?", 2))
-			*(data->ex_s) = 0;
+		ft_update_status(&p, data);
 	}
 	ft_free_pipe(&p);
 }
